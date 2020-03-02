@@ -26,7 +26,7 @@
       <!-- Print grocery list -->
       <ul class="list-group">
         <li *ngFor="let task of tasks" class="list-group-item">
-          <span> {{ task.name }} </span>
+          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
           
           <!-- Edit item -->
           <span (click)="onEdit(task)">
