@@ -1,17 +1,53 @@
+
+<!--Use Google Material + Icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 <div>
-  <h2> Grocery list manager </h2>
+  <h1> What to Buy: </h1>
 
   <div class="row">
-      <div class="col-xs-6 col-md-4">
-          <div class="input-group">
-              <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch" />
-              <div class="input-group-btn">
-                  <button class="btn btn-primary" type="button">
-      <span class="glyphicon glyphicon-ok"></span>
-      </button>
-              </div>
-          </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="input-group">
+        <!-- User input box -->
+        <input type="text" class="form-control" placeholder="enter grocery items" 
+          id="txtSearch" [(ngModel)]="task.name"/>
+        
+        <!-- Input item -->
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="onClick()">
+            <i class="material-icons">
+              done
+            </i>
+          </button>
+        </div>
       </div>
+
+      <!-- Print grocery list -->
+      <ul class="list-group">
+        <li *ngFor="let task of tasks" class="list-group-item">
+          <span> {{ task.name }} </span>
+          
+          <!-- Edit item -->
+          <span (click)="onEdit(task)">
+            <i class="material-icons">
+              edit
+            </i>
+          </span>
+          
+          <!-- Delete item -->
+          <span (click)="onDelete(task)">
+            <i class="material-icons">
+              clear
+            </i>
+          </span>
+        </li>
+      </ul>
+
+    </div>
   </div>
 
+  <br>
+ 
+  
 </div>
