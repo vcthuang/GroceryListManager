@@ -1,10 +1,5 @@
-
-<!--Use Google Material + Icon -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
 <div>
-  <h1> What to Buy: </h1>
+  <h1> What to Buy... </h1>
 
   <div class="row">
     <div class="col-xs-6 col-md-4">
@@ -25,19 +20,20 @@
 
       <!-- Print grocery list -->
       <ul class="list-group">
-        <li *ngFor="let task of tasks" class="list-group-item">
-          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
+        <li *ngFor="let task of tasks" class="list-group-item list-group-item-secondary">
+          <!-- Toggle item -->
+          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
           
           <!-- Edit item -->
           <span (click)="onEdit(task)">
-            <i class="material-icons">
+            <i class="material-icons edit-icons">
               edit
             </i>
           </span>
           
           <!-- Delete item -->
           <span (click)="onDelete(task)">
-            <i class="material-icons">
+            <i class="material-icons delete-icons">
               clear
             </i>
           </span>

@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* .strike is used grocerty.component */
 .strike{
   text-decoration:line-through;
+}
+
+body {
+  color: #fff;
+  background-color: rgb(10, 161, 167);
 }
