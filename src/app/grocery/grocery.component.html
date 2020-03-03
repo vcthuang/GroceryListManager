@@ -35,7 +35,7 @@
       <ul class="list-group">
         <li *ngFor="let task of tasks" class="list-group-item list-group-item-secondary">
           <!-- Toggle item -->
-          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }}</span>
+          <span (click)="onStrike(task)" class="list-item" [ngClass]="{'strike': task.strike}"> {{ task.name }}</span>
                               
           <!-- Delete item -->
           <span (click)="onDelete(task)">

@@ -24,6 +24,10 @@
   padding-top: 25px;
 }
 
+.list-item:hover {
+  cursor: pointer;
+}
+
 /* right align and color the pencil icon blue*/
 .edit-icons {
   color: blue;
@@ -32,7 +36,7 @@
   float: right;
 }
 
-.edit-icons:hover{
+.edit-icons:hover {
   cursor: pointer;
 }
 
@@ -44,6 +48,6 @@
   float: right;
 }
 
-.delete-icons:hover{
+.delete-icons:hover {
   cursor: pointer;
 }
