@@ -32,10 +32,18 @@
   float: right;
 }
 
+.edit-icons:hover{
+  cursor: pointer;
+}
+
 /* right align and color the delete icon red*/
 .delete-icons {
   color: red;
   padding: 5px 5px 5px 5px;
   vertical-align: middle;
   float: right;
+}
+
+.delete-icons:hover{
+  cursor: pointer;
 }
