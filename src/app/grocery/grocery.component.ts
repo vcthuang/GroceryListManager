@@ -38,7 +38,9 @@ export class GroceryComponent implements OnInit {
     
     // add an entry to tasks if it's a new shopping item
     if(this.task.id == 0){
-      this.tasks.push({id: (new Date()).getTime(),name: this.task.name, strike: false});
+      if (this.task.name) {
+        this.tasks.push({id: (new Date()).getTime(),name: this.task.name, strike: false});
+      }
     }
     
     // reset task or otherwise the shopping item will be shown on the input box 

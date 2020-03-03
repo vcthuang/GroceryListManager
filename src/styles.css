@@ -5,5 +5,10 @@
 
 body {
   color: #fff;
-  background-color: rgb(10, 161, 167);
+  font-family: 'Pacifico';
+  text-align: center;
+  margin-left: 20px;
+  background: url('lVeges.jpg');
+  opacity: 0.9;
+  font-size: 20px;
 }

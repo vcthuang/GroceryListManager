@@ -1,16 +1,29 @@
 <div>
-  <h1> What to Buy... </h1>
-
-  <div class="row">
-    <div class="col-xs-6 col-md-4">
+  <div class="row">  
+    <div class="col-xs-6 col-md-8 col-lg-8">
+      <label for="txtSearch" id="input-label">What to buy...
+        <i class="material-icons">
+          add_shopping_cart
+        </i>
+      </label>
       <div class="input-group">
         <!-- User input box -->
-        <input type="text" class="form-control" placeholder="enter grocery items" 
-          id="txtSearch" [(ngModel)]="task.name"/>
+        <!-- User can press enter key or clicking to submit an item -->
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="enter grocery items" 
+          id="txtSearch" 
+          [(ngModel)]="task.name" 
+          onkeydown = "if (event.keyCode == 13)
+            document.getElementById('btnInput').click()"/>
         
         <!-- Input item -->
         <div class="input-group-btn">
-          <button class="btn btn-primary" type="button" (click)="onClick()">
+          <button class="btn btn-light btn-outline-primary" 
+            id="btnInput" 
+            type="button" 
+            (click)="onClick()">
             <i class="material-icons">
               done
             </i>
@@ -22,7 +35,14 @@
       <ul class="list-group">
         <li *ngFor="let task of tasks" class="list-group-item list-group-item-secondary">
           <!-- Toggle item -->
-          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }}</span>
+                              
+          <!-- Delete item -->
+          <span (click)="onDelete(task)">
+            <i class="material-icons delete-icons">
+              clear
+            </i>
+          </span>
           
           <!-- Edit item -->
           <span (click)="onEdit(task)">
@@ -30,20 +50,9 @@
               edit
             </i>
           </span>
-          
-          <!-- Delete item -->
-          <span (click)="onDelete(task)">
-            <i class="material-icons delete-icons">
-              clear
-            </i>
-          </span>
+
         </li>
       </ul>
-
     </div>
   </div>
-
-  <br>
- 
-  
 </div>
